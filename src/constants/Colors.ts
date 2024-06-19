@@ -6,7 +6,7 @@
 
 export const Colors = {
   light: {
-    Primary: "#1C2A3A",
+    MidnightBlue: "#1C2A3A",
     white: "#FFFFFF",
     Grey50: "#F9FAFB",
     Grey100: "#F3F4F6",

@@ -19,8 +19,9 @@ import Animated, {
   interpolate,
   useAnimatedStyle,
   useSharedValue,
-  withTiming
+  withTiming,
 } from "react-native-reanimated";
+import { Font } from "../constants/Fonts";
 
 const { width } = Dimensions.get("window");
 const IMG_HEIGHT = 500;
@@ -48,7 +49,7 @@ const OnboardingScreen = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <FlatList
         ref={flatlistRef}
@@ -73,7 +74,10 @@ const OnboardingScreen = () => {
                 [8, 32, 8],
                 Extrapolation.EXTEND
               ),
-              backgroundColor: index === currentIndex ? "#1C2A3A" : "lightgray",
+              backgroundColor:
+                index === currentIndex
+                  ? Colors.light.MidnightBlue
+                  : Colors.light.Grey300,
             };
           });
           return (
@@ -83,7 +87,7 @@ const OnboardingScreen = () => {
           );
         })}
       </View>
-      <View style={{ marginTop: 25 }}>
+      <View style={{ marginVertical: 35 }}>
         <Link href={"/signin"} replace asChild>
           <Text style={styles.subHeading}>Skip</Text>
         </Link>
@@ -127,6 +131,10 @@ const Card = ({ data, index, scrollToIndex }: DataProps) => {
 export default OnboardingScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor: Colors.light.white,
+  },
   image: { width, height: IMG_HEIGHT },
   bottomContainer: {
     alignItems: "center",
@@ -134,15 +142,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width,
   },
-  heading: { fontSize: 24, 
-    // fontFamily: "InterBold", 
-    marginVertical: 15 },
+  heading: {
+    fontSize: 24,
+    fontFamily: Font.InterBold,
+    marginTop: 15,
+    marginBottom:5,
+    color:Colors.light.MidnightBlue
+  },
   subHeading: {
     textAlign: "center",
-    // fontFamily: "InterRegular",
+    fontFamily: Font.InterRegular,
     fontSize: 16,
     lineHeight: 26,
-    color: "374151",
+    color:Colors.light.Grey500
   },
   button: {
     backgroundColor: "#1C2A3A",
@@ -153,9 +165,9 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   buttonText: {
-    // fontFamily: "InterMedium",
+    fontFamily: Font.InterMedium,
     fontSize: 16,
-    color: Colors.light.white
+    color: Colors.light.white,
   },
   indicator: {
     flexDirection: "row",
