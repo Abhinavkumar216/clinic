@@ -21,7 +21,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import { Font } from "../constants/Fonts";
+import { Font, FontStyle } from "../constants/Fonts";
 
 const { width } = Dimensions.get("window");
 const IMG_HEIGHT = 500;
@@ -117,7 +117,7 @@ const Card = ({ data, index, scrollToIndex }: DataProps) => {
         <Animated.Text entering={FadeInDown} style={styles.heading}>
           {data.title}
         </Animated.Text>
-        <Animated.Text entering={FadeInDown} style={styles.subHeading}>
+        <Animated.Text entering={FadeInDown} style={styles.subHeading }>
           {data.subtitle}
         </Animated.Text>
         <TouchableOpacity style={styles.button} onPress={onPress}>
