@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { Colors } from "../constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
-import { Font } from "../constants/Fonts";
+import { Font, getFontSize } from "../constants/Fonts";
 import { Icon } from "@expo/vector-icons/build/createIconSet";
 
 type InputProps = {
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     color: Colors.light.Grey900,
-    fontSize: 16,
+    fontSize: getFontSize(16),
     fontFamily: Font.InterRegular,
     alignSelf: "center",
   },

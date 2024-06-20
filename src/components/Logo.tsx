@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
-import { Font } from "../constants/Fonts";
+import { Font, getFontSize } from "../constants/Fonts";
 import { Colors } from "../constants/Colors";
 
 const Logo = () => {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   logoText: {
-    fontSize: 18,
+    fontSize: getFontSize(18),
     fontFamily: Font.InterRegular,
     color: Colors.light.Grey500,
   },

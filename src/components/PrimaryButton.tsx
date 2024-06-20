@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Colors } from "../constants/Colors";
-import { Font } from "../constants/Fonts";
+import { Font, FontStyle } from "../constants/Fonts";
 
 type PrimaryButtonProps = {
   title: string;
@@ -20,7 +20,7 @@ const PrimaryButton = ({ title, loading, onPress }: PrimaryButtonProps) => {
       {loading == true ? (
         <ActivityIndicator size={"small"} color={"#fff"} />
       ) : (
-        <Text style={styles.buttonText}>{title}</Text>
+        <Text style={[FontStyle.Button, styles.buttonText]}>{title}</Text>
       )}
     </TouchableOpacity>
   );
@@ -38,8 +38,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonText: {
-    fontFamily: Font.InterMedium,
-    fontSize: 16,
     color: Colors.light.white,
   },
 });

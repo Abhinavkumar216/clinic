@@ -7,7 +7,8 @@ import PrimaryButton from "../components/PrimaryButton";
 import Authgreetings from "../components/authgreetings";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Colors } from "../constants/Colors";
-import { Font, FontStyle } from "../constants/Fonts";
+import { Font, FontStyle, getFontSize } from "../constants/Fonts";
+import { Link } from "expo-router";
 
 const Signin = () => {
   return (
@@ -29,7 +30,7 @@ const Signin = () => {
 
       <View style={styles.orContainer}>
         <View style={styles.orline} />
-        <Text style={{ color: Colors.light.Grey600, fontSize: 16 }}>or</Text>
+        <Text style={{ color: Colors.light.Grey600, fontSize: getFontSize(16) }}>or</Text>
         <View style={styles.orline} />
       </View>
 
@@ -47,7 +48,8 @@ const Signin = () => {
           Forgot password?
         </Text>
       </View>
-      <View style={styles.forgotContainer}>
+      <Link href={'/signup'} asChild>
+      <TouchableOpacity style={styles.forgotContainer}>
         <Text style={[FontStyle.bodySRegular, { color: Colors.light.Grey500 }]}>
           Don't have an account yet?{" "}
           <Text
@@ -56,7 +58,8 @@ const Signin = () => {
             Sign up
           </Text>
         </Text>
-      </View>
+      </TouchableOpacity>
+      </Link>
     </SafeAreaView>
   );
 };

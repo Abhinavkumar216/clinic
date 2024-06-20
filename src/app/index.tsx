@@ -21,7 +21,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import { Font, FontStyle } from "../constants/Fonts";
+import { Font, FontStyle, getFontSize } from "../constants/Fonts";
 
 const { width } = Dimensions.get("window");
 const IMG_HEIGHT = 500;
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     width,
   },
   heading: {
-    fontSize: 24,
+    fontSize: getFontSize(24),
     fontFamily: Font.InterBold,
     marginTop: 15,
     marginBottom:5,
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   subHeading: {
     textAlign: "center",
     fontFamily: Font.InterRegular,
-    fontSize: 16,
+    fontSize: getFontSize(16),
     lineHeight: 26,
     color:Colors.light.Grey500
   },
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: Font.InterMedium,
-    fontSize: 16,
+    fontSize: getFontSize(16),
     color: Colors.light.white,
   },
   indicator: {
